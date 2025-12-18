@@ -1,13 +1,24 @@
 import { MessageCircle, Phone, Mail, MapPin, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
 
 const ContactSection = () => {
+  const [images, setImages] = useState([
+    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=500&fit=crop",
+    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop",
+    "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop",
+    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop",
+    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop",
+    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=500&fit=crop",
+    "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop"
+  ]);
+
   return (
     <section id="contacto" className="py-12 md:py-16 lg:py-32 bg-black relative overflow-hidden px-4">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 md:-top-32 lg:top-20 right-0 md:right-20 w-48 md:w-96 lg:w-96 h-48 md:h-96 lg:h-96 bg-accent/10 rounded-full blur-3xl animate-float" />
-        <div className="absolute -bottom-40 md:-bottom-32 lg:-bottom-32 -left-40 md:-left-32 lg:-left-32 w-48 md:w-80 lg:w-80 h-48 md:h-80 lg:h-80 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute -top-40 md:-top-32 lg:top-20 right-0 md:right-20 w-48 md:w-96 lg:w-96 h-48 md:h-96 lg:h-96 bg-green-500/10 rounded-full blur-3xl animate-float" />
+        <div className="absolute -bottom-40 md:-bottom-32 lg:-bottom-32 -left-40 md:-left-32 lg:-left-32 w-48 md:w-80 lg:w-80 h-48 md:h-80 lg:h-80 bg-green-500/10 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto relative z-10">
@@ -23,7 +34,7 @@ const ContactSection = () => {
             {/* Title */}
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 md:mb-8 leading-tight">
               ¿Listo para alcanzar tu{" "}
-              <span className="text-gradient-gold">máximo potencial</span>?
+              <span className="text-[#25D366]">máximo potencial</span>?
             </h2>
 
             {/* Description */}
@@ -36,26 +47,38 @@ const ContactSection = () => {
             <div className="space-y-3 md:space-y-4 mb-8 md:mb-12">
               <Button 
                 size="lg"
-                className="w-full bg-[#25D366] hover:bg-[#25D366]/90 text-white gap-3 px-6 md:px-8 py-5 md:py-6 text-sm md:text-base rounded-xl md:rounded-2xl shadow-2xl hover:shadow-green-500/50 transition-all duration-300 group hover:scale-105 font-semibold"
+                className="w-full relative overflow-hidden bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#128C7E] hover:to-[#25D366] text-white gap-3 px-6 md:px-8 py-5 md:py-6 text-sm md:text-base rounded-2xl shadow-2xl hover:shadow-[#25D366]/50 transition-all duration-500 group hover:scale-[1.02] font-semibold border border-white/10 backdrop-blur-sm"
                 onClick={() => window.open("https://wa.me/51993745240", "_blank")}
               >
-                <MessageCircle className="w-5 h-5 md:w-6 md:h-6 group-hover:rotate-12 transition-transform" />
-                <div className="text-left flex-1">
-                  <div className="text-xs md:text-sm">WhatsApp Línea 1</div>
-                  <div className="text-xs opacity-90">+51 993 745 240</div>
+                {/* Animated background effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                
+                <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white/20 flex items-center justify-center group-hover:rotate-[360deg] transition-transform duration-700">
+                  <MessageCircle className="w-5 h-5 md:w-6 md:h-6" />
                 </div>
+                <div className="text-left flex-1 relative">
+                  <div className="text-sm md:text-base font-bold">WhatsApp Línea 1</div>
+                  <div className="text-xs md:text-sm opacity-90 font-normal">+51 993 745 240</div>
+                </div>
+                <div className="relative text-xl group-hover:translate-x-1 transition-transform">→</div>
               </Button>
 
               <Button 
                 size="lg"
-                className="w-full bg-[#25D366] hover:bg-[#25D366]/90 text-white gap-3 px-6 md:px-8 py-5 md:py-6 text-sm md:text-base rounded-xl md:rounded-2xl shadow-2xl hover:shadow-green-500/50 transition-all duration-300 group hover:scale-105 font-semibold"
+                className="w-full relative overflow-hidden bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#128C7E] hover:to-[#25D366] text-white gap-3 px-6 md:px-8 py-5 md:py-6 text-sm md:text-base rounded-2xl shadow-2xl hover:shadow-[#25D366]/50 transition-all duration-500 group hover:scale-[1.02] font-semibold border border-white/10 backdrop-blur-sm"
                 onClick={() => window.open("https://wa.me/51937182708", "_blank")}
               >
-                <MessageCircle className="w-5 h-5 md:w-6 md:h-6 group-hover:rotate-12 transition-transform" />
-                <div className="text-left flex-1">
-                  <div className="text-xs md:text-sm">WhatsApp Línea 2</div>
-                  <div className="text-xs opacity-90">+51 937 182 708</div>
+                {/* Animated background effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                
+                <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white/20 flex items-center justify-center group-hover:rotate-[360deg] transition-transform duration-700">
+                  <MessageCircle className="w-5 h-5 md:w-6 md:h-6" />
                 </div>
+                <div className="text-left flex-1 relative">
+                  <div className="text-sm md:text-base font-bold">WhatsApp Línea 2</div>
+                  <div className="text-xs md:text-sm opacity-90 font-normal">+51 937 182 708</div>
+                </div>
+                <div className="relative text-xl group-hover:translate-x-1 transition-transform">→</div>
               </Button>
             </div>
 
@@ -93,21 +116,55 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* Right Success Animation */}
-          <div className="hidden lg:flex justify-center items-center relative h-full min-h-96">
-            {/* Avatar with floating animation */}
-            <div className="relative animate-float">
-              {/* Floating stars */}
-              <div className="absolute -top-16 -right-16 w-8 h-8 text-gold-light animate-bounce" style={{ animationDelay: "0s" }}>★</div>
-              <div className="absolute -bottom-12 -left-20 w-6 h-6 text-primary animate-bounce" style={{ animationDelay: "0.5s" }}>★</div>
-              <div className="absolute top-1/2 -right-24 w-5 h-5 text-accent animate-bounce" style={{ animationDelay: "1s" }}>★</div>
+          {/* Right Carousel Gallery */}
+          <div className="hidden lg:flex justify-center items-center relative h-full min-h-96 overflow-hidden">
+            {/* Floating decorative elements */}
+            <div className="absolute -top-8 right-0 w-8 h-8 text-[#25D366] animate-bounce z-20" style={{ animationDelay: "0s" }}>★</div>
+            <div className="absolute -bottom-8 left-0 w-6 h-6 text-[#25D366] animate-bounce z-20" style={{ animationDelay: "0.5s" }}>★</div>
+            <div className="absolute top-1/2 right-0 w-5 h-5 text-[#25D366] animate-bounce z-20" style={{ animationDelay: "1s" }}>★</div>
 
-              {/* Main avatar image */}
-              <img 
-                src="/assets/img/rey.png" 
-                alt="Éxito" 
-                className="w-full max-w-xs md:max-w-md drop-shadow-2xl"
-              />
+            {/* Carousel Container with Gradient Masks */}
+            <div className="relative w-full max-w-2xl">
+              {/* Left Gradient Mask */}
+              <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+              
+              {/* Right Gradient Mask */}
+              <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+
+              {/* Scrolling Images Container */}
+              <div className="flex gap-6 animate-scroll-left">
+                {/* First Set of Images */}
+                <div className="flex gap-6 flex-shrink-0">
+                  {images.map((img, idx) => (
+                    <div key={`first-${idx}`} className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-[#25D366]/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#25D366]/20 w-48 flex-shrink-0">
+                      <div className="aspect-[4/5] relative overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#25D366]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+                        <img 
+                          src={img} 
+                          alt={`Imagen ${idx + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Duplicate Set for Seamless Loop */}
+                <div className="flex gap-6 flex-shrink-0">
+                  {images.map((img, idx) => (
+                    <div key={`second-${idx}`} className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-[#25D366]/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#25D366]/20 w-48 flex-shrink-0">
+                      <div className="aspect-[4/5] relative overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#25D366]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+                        <img 
+                          src={img} 
+                          alt={`Imagen ${idx + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -117,6 +174,23 @@ const ContactSection = () => {
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
           50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes scroll-left {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        
+        .animate-scroll-left {
+          animation: scroll-left 10s linear infinite;
+        }
+        
+        .animate-scroll-left:hover {
+          animation-play-state: paused;
+        }
+        
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
         }
       `}</style>
     </section>
