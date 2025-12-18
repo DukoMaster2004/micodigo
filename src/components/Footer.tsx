@@ -82,7 +82,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-6 md:pt-8 border-t border-background/10 flex flex-col sm:flex-row justify-between items-center gap-3 md:gap-4 text-center sm:text-left">
           <p className="text-background/50 text-xs md:text-sm">
-            © {currentYear} IB MATH – Todos los derechos reservados.
+            © {currentYear} IB MATH – Todos los derechos reservados ya esta pero poco falta.
           </p>
           <p className="text-background/50 text-xs md:text-sm">
             Matemáticas del Bachillerato Internacional
