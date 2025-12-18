@@ -1,4 +1,4 @@
-import { MessageCircle, Phone, Mail, MapPin, Zap } from "lucide-react";
+import { MessageCircle, Phone, Mail, MapPin, Zap, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 
@@ -12,6 +12,8 @@ const ContactSection = () => {
     "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=500&fit=crop",
     "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop"
   ]);
+
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
 
   return (
     <section id="contacto" className="py-12 md:py-16 lg:py-32 bg-black relative overflow-hidden px-4">
@@ -113,6 +115,32 @@ const ContactSection = () => {
                   <div className="text-white font-medium text-xs md:text-sm">Online (Zoom/Meet) • Presencial (Lima)</div>
                 </div>
               </div>
+
+              {/* Payment Methods */}
+              <div className="flex items-start gap-3 md:gap-4 pt-4">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <Smartphone className="w-5 h-5 md:w-6 md:h-6 text-[#25D366]" />
+                </div>
+                <div className="flex-1">
+                  <div className="text-white/60 text-xs md:text-sm mb-2">Métodos de Pago</div>
+                  <div className="grid grid-cols-2 gap-2">
+                    <button 
+                      onClick={() => setShowPaymentModal(true)}
+                      className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white text-xs font-semibold transition-all hover:scale-105"
+                    >
+                      <span className="text-sm">📱</span>
+                      Yape
+                    </button>
+                    <button 
+                      onClick={() => setShowPaymentModal(true)}
+                      className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white text-xs font-semibold transition-all hover:scale-105"
+                    >
+                      <span className="text-sm">💳</span>
+                      Plin
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -169,6 +197,63 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Payment Methods Modal */}
+      {showPaymentModal && (
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-gray-900 rounded-2xl p-6 md:p-8 max-w-md w-full border border-white/10 animate-in fade-in zoom-in-95">
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-6">Métodos de Pago</h3>
+            
+            <div className="space-y-4 mb-6">
+              {/* Yape */}
+              <div className="p-4 rounded-xl bg-gradient-to-r from-blue-600/20 to-blue-700/20 border border-blue-500/30 hover:border-blue-500/60 transition-colors cursor-pointer group"
+                onClick={() => window.open("https://wa.me/51993745240?text=Hola%2C%20quiero%20pagar%20con%20Yape", "_blank")}>
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="text-3xl">📱</span>
+                  <div>
+                    <h4 className="font-bold text-white">Yape</h4>
+                    <p className="text-xs text-white/60">Transferencia digital</p>
+                  </div>
+                </div>
+                <p className="text-xs text-white/50 ml-12">Escríbeme por WhatsApp para coordinar el pago</p>
+              </div>
+
+              {/* Plin */}
+              <div className="p-4 rounded-xl bg-gradient-to-r from-purple-600/20 to-purple-700/20 border border-purple-500/30 hover:border-purple-500/60 transition-colors cursor-pointer group"
+                onClick={() => window.open("https://wa.me/51993745240?text=Hola%2C%20quiero%20pagar%20con%20Plin", "_blank")}>
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="text-3xl">💳</span>
+                  <div>
+                    <h4 className="font-bold text-white">Plin</h4>
+                    <p className="text-xs text-white/60">Billetera digital</p>
+                  </div>
+                </div>
+                <p className="text-xs text-white/50 ml-12">Escríbeme por WhatsApp para coordinar el pago</p>
+              </div>
+
+              {/* Transferencia Bancaria */}
+              <div className="p-4 rounded-xl bg-gradient-to-r from-green-600/20 to-green-700/20 border border-green-500/30 hover:border-green-500/60 transition-colors cursor-pointer group"
+                onClick={() => window.open("https://wa.me/51993745240?text=Hola%2C%20quiero%20realizar%20una%20transferencia%20bancaria", "_blank")}>
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="text-3xl">🏦</span>
+                  <div>
+                    <h4 className="font-bold text-white">Transferencia Bancaria</h4>
+                    <p className="text-xs text-white/60">Transferencia directa</p>
+                  </div>
+                </div>
+                <p className="text-xs text-white/50 ml-12">Escríbeme por WhatsApp para coordinar el pago</p>
+              </div>
+            </div>
+
+            <button
+              onClick={() => setShowPaymentModal(false)}
+              className="w-full py-3 rounded-lg bg-white/10 hover:bg-white/20 text-white font-semibold transition-colors"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      )}
 
       <style>{`
         @keyframes float {
