@@ -3,123 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const ContactSection = () => {
   return (
-    <section id="contacto" className="py-12 md:py-16 lg:py-32 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 relative overflow-hidden px-4">
-      <style>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
-        }
-
-        @keyframes rotate-gentle {
-          0%, 100% { transform: rotateZ(-2deg); }
-          50% { transform: rotateZ(2deg); }
-        }
-
-        @keyframes glow-pulse {
-          0%, 100% { 
-            box-shadow: 0 0 20px rgba(255, 193, 7, 0.2), 0 0 40px rgba(59, 130, 246, 0.15);
-          }
-          50% { 
-            box-shadow: 0 0 30px rgba(255, 193, 7, 0.4), 0 0 60px rgba(59, 130, 246, 0.25);
-          }
-        }
-
-        @keyframes shimmer {
-          0% { transform: translateX(-100%); }
-          100% { transform: translateX(100%); }
-        }
-
-        @keyframes orbit {
-          0%, 100% { 
-            transform: rotate(0deg) translateX(60px) rotate(0deg);
-            opacity: 0.3;
-          }
-          50% { 
-            opacity: 1;
-          }
-        }
-
-        @keyframes bounce-star {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          25% { transform: translateY(-15px) rotate(5deg); }
-          50% { transform: translateY(-30px) rotate(10deg); }
-          75% { transform: translateY(-15px) rotate(5deg); }
-        }
-
-        .avatar-container {
-          animation: float 6s ease-in-out infinite;
-          position: relative;
-        }
-
-        .avatar-wrapper {
-          animation: rotate-gentle 4s ease-in-out infinite;
-          transform-origin: center;
-          position: relative;
-        }
-
-        .avatar-glow {
-          animation: glow-pulse 3s ease-in-out infinite;
-          position: relative;
-        }
-
-        .avatar-shimmer::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255, 193, 7, 0.2), transparent);
-          animation: shimmer 3s infinite;
-          border-radius: inherit;
-          pointer-events: none;
-        }
-
-        .orbit-element {
-          position: absolute;
-          border-radius: 50%;
-        }
-
-        .orbit-1 {
-          width: 8px;
-          height: 8px;
-          background: rgba(255, 193, 7, 0.6);
-          animation: orbit 8s linear infinite;
-          animation-delay: 0s;
-        }
-
-        .orbit-2 {
-          width: 6px;
-          height: 6px;
-          background: rgba(59, 130, 246, 0.6);
-          animation: orbit 8s linear infinite;
-          animation-delay: -2.67s;
-        }
-
-        .orbit-3 {
-          width: 7px;
-          height: 7px;
-          background: rgba(255, 193, 7, 0.4);
-          animation: orbit 8s linear infinite;
-          animation-delay: -5.33s;
-        }
-
-        .star-bounce-1 {
-          animation: bounce-star 2.5s ease-in-out infinite;
-          animation-delay: 0s;
-        }
-
-        .star-bounce-2 {
-          animation: bounce-star 2.5s ease-in-out infinite;
-          animation-delay: 0.5s;
-        }
-
-        .star-bounce-3 {
-          animation: bounce-star 2.5s ease-in-out infinite;
-          animation-delay: 1s;
-        }
-      `}</style>
-
+    <section id="contacto" className="py-12 md:py-16 lg:py-32 bg-black relative overflow-hidden px-4">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 md:-top-32 lg:top-20 right-0 md:right-20 w-48 md:w-96 lg:w-96 h-48 md:h-96 lg:h-96 bg-accent/10 rounded-full blur-3xl animate-float" />
@@ -211,35 +95,30 @@ const ContactSection = () => {
 
           {/* Right Success Animation */}
           <div className="hidden lg:flex justify-center items-center relative h-full min-h-96">
-            {/* Orbiting Elements */}
-            <div className="absolute w-80 h-80 pointer-events-none">
-              <div className="orbit-element orbit-1" />
-              <div className="orbit-element orbit-2" />
-              <div className="orbit-element orbit-3" />
-            </div>
+            {/* Avatar with floating animation */}
+            <div className="relative animate-float">
+              {/* Floating stars */}
+              <div className="absolute -top-16 -right-16 w-8 h-8 text-gold-light animate-bounce" style={{ animationDelay: "0s" }}>★</div>
+              <div className="absolute -bottom-12 -left-20 w-6 h-6 text-primary animate-bounce" style={{ animationDelay: "0.5s" }}>★</div>
+              <div className="absolute top-1/2 -right-24 w-5 h-5 text-accent animate-bounce" style={{ animationDelay: "1s" }}>★</div>
 
-            {/* Avatar Container with animations */}
-            <div className="avatar-container">
-              <div className="avatar-wrapper">
-                <div className="avatar-glow">
-                  <div className="avatar-shimmer relative w-full max-w-xs md:max-w-md drop-shadow-2xl rounded-2xl overflow-hidden">
-                    <img 
-                      src="/assets/img/exito.png" 
-                      alt="Éxito" 
-                      className="w-full h-auto"
-                    />
-                  </div>
-                </div>
-              </div>
+              {/* Main avatar image */}
+              <img 
+                src="/assets/img/rey.png" 
+                alt="Éxito" 
+                className="w-full max-w-xs md:max-w-md drop-shadow-2xl"
+              />
             </div>
-
-            {/* Animated Floating Stars */}
-            <div className="absolute -top-16 -right-16 w-8 h-8 text-yellow-300 star-bounce-1 select-none">★</div>
-            <div className="absolute -bottom-12 -left-20 w-6 h-6 text-blue-300 star-bounce-2 select-none">★</div>
-            <div className="absolute top-1/2 -right-24 w-5 h-5 text-yellow-400 star-bounce-3 select-none">★</div>
           </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+        }
+      `}</style>
     </section>
   );
 };
