@@ -49,11 +49,11 @@ const AboutSection = () => {
           <div className="lg:col-span-1">
             <div className="bg-card border border-border rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl hover:shadow-accent/20 transition-all duration-300 sticky top-24 md:top-28 lg:top-32">
               {/* Photo Section */}
-              <div className="relative h-48 md:h-56 lg:h-64 bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center overflow-hidden">
+              <div className="relative h-64 md:h-80 lg:h-96 bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center overflow-hidden">
                 <img 
-                  src="/assets/img/profesor.jpg" 
+                  src="/assets/img/perfil.jpg" 
                   alt="Profesor de Matemáticas IB" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
               </div>
