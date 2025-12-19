@@ -74,7 +74,7 @@ const FormularioContacto = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-black relative overflow-hidden px-4">
+    <section id="formulario" className="py-16 md:py-24 bg-black relative overflow-hidden px-4">
       {/* Animated background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 right-0 w-96 h-96 bg-green-500/10 rounded-full blur-3xl animate-float" />

@@ -70,7 +70,7 @@ const CredentialsSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section id="certificados" className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">

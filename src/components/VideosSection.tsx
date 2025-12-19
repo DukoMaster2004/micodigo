@@ -9,10 +9,10 @@ interface VideoType {
 }
 
 const VideosSection = () => {
-  const [tab, setTab] = useState<"presencial" | "virtual">("presencial");
-  const [videoSeleccionado, setVideoSeleccionado] = useState<string | null>(null);
+  const [tab, setTab] = useState("presencial");
+  const [videoSeleccionado, setVideoSeleccionado] = useState(null);
 
-  const videosPresencial: VideoType[] = [
+  const videosPresencial = [
     {
       id: "1",
       titulo: "Clase Presencial - Introducción",
@@ -39,7 +39,7 @@ const VideosSection = () => {
     }
   ];
 
-  const videosVirtual: VideoType[] = [
+  const videosVirtual = [
     {
       id: "5",
       titulo: "Clase Virtual - Zoom",
@@ -69,7 +69,7 @@ const VideosSection = () => {
   const videosActuales = tab === "presencial" ? videosPresencial : videosVirtual;
 
   return (
-    <section className="py-16 md:py-24 bg-black relative overflow-hidden px-4">
+    <section id="videos" className="py-16 md:py-24 bg-black relative overflow-hidden px-4">
       {/* Animated background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 right-0 w-96 h-96 bg-green-500/10 rounded-full blur-3xl animate-float" />
