@@ -104,7 +104,7 @@ const ContactSection = () => {
 
               {/* Main avatar image */}
               <img 
-                src="/assets/img/rey.png" 
+                src="/assets/img/otrorey.png" 
                 alt="Éxito" 
                 className="w-full max-w-xs md:max-w-md drop-shadow-2xl"
               />
