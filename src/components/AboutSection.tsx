@@ -51,7 +51,7 @@ const AboutSection = () => {
               {/* Photo Section */}
               <div className="relative h-64 md:h-80 lg:h-96 bg-gradient-to-br from-slate-700 to-slate-600 flex items-center justify-center overflow-hidden">
                 <img 
-                  src="/assets/img/perfil.jpg" 
+                  src="public/assets/img/perfil.jpg" 
                   alt="Profesor de Matemáticas IB" 
                   className="w-full h-full object-contain"
                 />
